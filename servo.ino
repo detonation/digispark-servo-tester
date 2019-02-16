@@ -33,7 +33,6 @@ void setup() {
 
 void loop() {
 switchPos = digitalRead(switchPin); //Read mode switch
-
 switch (switchPos) {
   case 0:    // switch position 0
   btn = digitalRead(buttonPin);
@@ -47,7 +46,6 @@ switch (switchPos) {
       delay(REFRESH_PERIOD_MS);        // refresh delay
       SoftRcPulseOut::refresh(NOW);    // generates pulse
     } 
-
     for(pos = 0; pos < 180; pos += 1)  // goes from 0 degrees to 180 degrees 
     {                                  
       servo.write(pos);                // write pos 
@@ -64,4 +62,5 @@ switch (switchPos) {
       servo.write(potpos); // write pos
       SoftRcPulseOut::refresh(NOW); // generate pulse
       break;
-}}
+  }
+}
